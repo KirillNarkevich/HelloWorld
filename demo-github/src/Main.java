@@ -80,5 +80,6 @@ public class Main {
         StringBuffer buffer = new StringBuffer("Hello!");
         buffer.append("\nMy name is Kirill");
         System.out.println(buffer); // Using buffer method
+
         }
     }
