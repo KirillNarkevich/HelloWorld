@@ -1,6 +1,7 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-import java.util.Scanner;
+/*
+TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+ click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+*/
 
 public class Main {
     public static void main(String[] args) {
@@ -198,8 +199,8 @@ public class Main {
 //    }
 
 
-        // Домашнее задание от 01.10.2024
-        // Задание 1. Доработка if else
+//         Домашнее задание от 01.10.2024
+//         Задание 1. Доработка if else
 
 //        System.out.println("Please enter your score: ");
 //        Scanner scanner = new Scanner(System.in);
@@ -218,25 +219,25 @@ public class Main {
 //        } else if (userScore >= 0 && userScore < 30) {
 //            System.out.println("You get a D");
 //        }
-
-
-        // Задание 2. Доработка цикла while
-
-
+//
+//
+////         Задание 2. Доработка цикла while
+//
+//
 //    String userInput = "";
 //    Scanner scanner = new Scanner(System.in);
 //        while (true) {
-//        if (userInput.equals("Exit") || userInput.equals("exit") || userInput.equals("EXIT") ) {
+//        if (userInput.equalsIgnoreCase("Exit") ) {
 //            break;
 //        }
 //        System.out.println("Please enter something");
 //        userInput = scanner.nextLine();
 //    }
 //        System.out.println("Thanks, Bye!");
-
-
-        // Задание 3. Доработка цикла for
-
+//
+//
+////         Задание 3. Доработка цикла for
+//
 //            Scanner scanner = new Scanner(System.in);
 //            System.out.print("Пожалуйста, введите число: ");
 //
@@ -254,35 +255,67 @@ public class Main {
 //            }
 //            System.out.printf("Сумма чисел от 0 до %d равна %d", userInput, sum);
 //        }
+//
+//
+//        // Задание 4. Пульт дистанционного управления
+//
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Пожалуйста, введите номер канала от 1 до 7 (или 0 для выхода): ");
+//
+//        String[] channels = new String[7];
+//        channels[0] = "ТНТ";
+//        channels[1] = "Bridge TV";
+//        channels[2] = "Рен-ТВ";
+//        channels[3] = "Nickelodeon";
+//        channels[4] = "MTV";
+//        channels[5] = "Муз-ТВ";
+//        channels[6] = "ТВ-3";
+//
+//        while (true) {
+//            int channelNumber = scanner.nextInt();
+//            if (channelNumber == 0) {
+//                System.out.println("Выход из программы.");
+//                break;
+//            }
+//            if (channelNumber > 0 && channelNumber <= channels.length) {
+//                System.out.println("Вы выбрали: " + channels[channelNumber - 1]);
+//            } else {
+//                System.out.println("Неверный номер канала. Пожалуйста, введите номер от 1 до " + channels.length + ".");
+//            }
+//        }
+
+//         Домашнее задание от 03.10.2024
+//         Задание 1. Описание объекта из реального мира в виде класса/набора классов с добавлением полей и конструктора
+
+        Candle blackCandle = new Candle("black", "S", "sandalwood", 14.99);
+        blackCandle.showInfoAboutCandle();
 
 
-        // Задание 4. Пульт дистанционного управления
+        Candle orangeCandle = new Candle("orange", "M", "persimmon", 19.99);
+        orangeCandle.showInfoAboutCandle();
+        orangeCandle.addToCart(10);
+        orangeCandle.setFlavor("Green Tea");
+        System.out.println(orangeCandle.getFlavor());
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Пожалуйста, введите номер канала от 1 до 7 (или 0 для выхода): ");
 
-        String[] channels = new String[7];
-        channels[0] = "ТНТ";
-        channels[1] = "Bridge TV";
-        channels[2] = "Рен-ТВ";
-        channels[3] = "Nickelodeon";
-        channels[4] = "MTV";
-        channels[5] = "Муз-ТВ";
-        channels[6] = "ТВ-3";
+        // Задание 2. Создание экземпляра класса в методе main
 
-        while (true) {
-            int channelNumber = scanner.nextInt();
-            if (channelNumber == 0) {
-                System.out.println("Выход из программы.");
-                break;
-            }
-            if (channelNumber > 0 && channelNumber <= channels.length) {
-                System.out.println("Вы выбрали: " + channels[channelNumber - 1]);
-            } else {
-                System.out.println("Неверный номер канала. Пожалуйста, введите номер от 1 до " + channels.length + ".");
-            }
+        Candle redCandle = new Candle("Red", "L", "Vanilla", 25.99);  // Создание экземпляра класса Candle
 
-        }
+        redCandle.showInfoAboutCandle();  // Вывод информации о свече
+        redCandle.addToCart(3); // Добавление свечи в корзину
+
+        // Изменение аромата и вывод обновленной информации
+        redCandle.setFlavor("Lavender");
+        System.out.println("Updated red flavor:");
+        redCandle.showInfoAboutCandle();
+
+        // Задание 3. Переработанная программа с выводом информации об объекте свеча
+
+        // Вывод информации о свече
+        String infoAboutCandle = String.format("Candle color: %s, Candle size: %s, Candle flavor: %s, Candle price: %.2f",
+                redCandle.color, redCandle.size, redCandle.getFlavor(), redCandle.price);
+        System.out.println(infoAboutCandle);
 
     }
 }
