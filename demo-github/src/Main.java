@@ -1,6 +1,7 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-import java.util.Scanner;
+/*
+TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+ click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+*/
 
 public class Main {
     public static void main(String[] args) {
@@ -198,8 +199,8 @@ public class Main {
 //    }
 
 
-        // Домашнее задание от 01.10.2024
-        // Задание 1. Доработка if else
+//         Домашнее задание от 01.10.2024
+//         Задание 1. Доработка if else
 
 //        System.out.println("Please enter your score: ");
 //        Scanner scanner = new Scanner(System.in);
@@ -218,11 +219,11 @@ public class Main {
 //        } else if (userScore >= 0 && userScore < 30) {
 //            System.out.println("You get a D");
 //        }
-
-
-        // Задание 2. Доработка цикла while
-
-
+//
+//
+////         Задание 2. Доработка цикла while
+//
+//
 //    String userInput = "";
 //    Scanner scanner = new Scanner(System.in);
 //        while (true) {
@@ -233,10 +234,10 @@ public class Main {
 //        userInput = scanner.nextLine();
 //    }
 //        System.out.println("Thanks, Bye!");
-
-
-        // Задание 3. Доработка цикла for
-
+//
+//
+////         Задание 3. Доработка цикла for
+//
 //            Scanner scanner = new Scanner(System.in);
 //            System.out.print("Пожалуйста, введите число: ");
 //
@@ -283,18 +284,18 @@ public class Main {
 //            }
 //        }
 
-        // Домашнее задание от 03.10.2024
-        // Задание 1. Описание объекта из реального мира в виде класса/набора классов с добавлением полей и конструктора
+//         Домашнее задание от 03.10.2024
+//         Задание 1. Описание объекта из реального мира в виде класса/набора классов с добавлением полей и конструктора
 
-//        Candle blackCandle = new Candle("black", "S", "sandalwood", 14.99);
-//        blackCandle.showInfoAboutCandle();
-//
-//
-//        Candle orangeCandle = new Candle("orange", "M", "persimmon", 19.99);
-//        orangeCandle.showInfoAboutCandle();
-//        orangeCandle.addToCart(10);
-//        orangeCandle.setFlavor("Green Tea");
-//        System.out.println(orangeCandle.getFlavor());
+        Candle blackCandle = new Candle("black", "S", "sandalwood", 14.99);
+        blackCandle.showInfoAboutCandle();
+
+
+        Candle orangeCandle = new Candle("orange", "M", "persimmon", 19.99);
+        orangeCandle.showInfoAboutCandle();
+        orangeCandle.addToCart(10);
+        orangeCandle.setFlavor("Green Tea");
+        System.out.println(orangeCandle.getFlavor());
 
 
         // Задание 2. Создание экземпляра класса в методе main
@@ -315,5 +316,6 @@ public class Main {
         String infoAboutCandle = String.format("Candle color: %s, Candle size: %s, Candle flavor: %s, Candle price: %.2f",
                 redCandle.color, redCandle.size, redCandle.getFlavor(), redCandle.price);
         System.out.println(infoAboutCandle);
+
     }
 }

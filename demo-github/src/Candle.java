@@ -28,4 +28,5 @@ public class Candle {
     public String getFlavor() {
         return flavor;
     }
+
 }
