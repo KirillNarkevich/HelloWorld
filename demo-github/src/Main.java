@@ -3,11 +3,17 @@ TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
  click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 */
 
+import gifts.BearToy;
+import gifts.Perfume;
+import gifts.cake.Cake;
+import gifts.cake.Packing;
+import gifts.cake.Topping;
+
 public class Main {
     public static void main(String[] args) {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
-        System.out.println("Hello World!");
+//        System.out.println("Hello World!");
 
 
         //  for (int i = 1; i <= 5; i++) {
@@ -284,38 +290,51 @@ public class Main {
 //            }
 //        }
 
-//         Домашнее задание от 03.10.2024
+//         Домашнее задание от 02.10.2024
 //         Задание 1. Описание объекта из реального мира в виде класса/набора классов с добавлением полей и конструктора
+//
+//        items.Candle blackCandle = new items.Candle("black", "S", "sandalwood", 14.99);
+//        blackCandle.showInfoAboutCandle();
+//
+//
+//        items.Candle orangeCandle = new items.Candle("orange", "M", "persimmon", 19.99);
+//        orangeCandle.showInfoAboutCandle();
+//        orangeCandle.addToCart(10);
+//        orangeCandle.setFlavor("Green Tea");
+//        System.out.println(orangeCandle.getFlavor());
+//
+//
+//        // Задание 2. Создание экземпляра класса в методе main
+//
+//        items.Candle redCandle = new items.Candle("Red", "L", "Vanilla", 25.99);  // Создание экземпляра класса items.Candle
+//
+//        redCandle.showInfoAboutCandle();  // Вывод информации о свече
+//        redCandle.addToCart(3); // Добавление свечи в корзину
+//
+//        // Изменение аромата и вывод обновленной информации
+//        redCandle.setFlavor("Lavender");
+//        System.out.println("Updated red flavor:");
+//        redCandle.showInfoAboutCandle();
+//
+//        // Задание 3. Переработанная программа с выводом информации об объекте свеча
+//
+//        // Вывод информации о свече
+//        String infoAboutCandle = String.format("items.Candle color: %s, items.Candle size: %s, items.Candle flavor: %s, items.Candle price: %.2f",
+//                redCandle.color, redCandle.size, redCandle.getFlavor(), redCandle.price);
+//        System.out.println(infoAboutCandle);
 
-        Candle blackCandle = new Candle("black", "S", "sandalwood", 14.99);
-        blackCandle.showInfoAboutCandle();
 
+//         Домашнее задание от 07.10.2024
 
-        Candle orangeCandle = new Candle("orange", "M", "persimmon", 19.99);
-        orangeCandle.showInfoAboutCandle();
-        orangeCandle.addToCart(10);
-        orangeCandle.setFlavor("Green Tea");
-        System.out.println(orangeCandle.getFlavor());
-
-
-        // Задание 2. Создание экземпляра класса в методе main
-
-        Candle redCandle = new Candle("Red", "L", "Vanilla", 25.99);  // Создание экземпляра класса Candle
-
-        redCandle.showInfoAboutCandle();  // Вывод информации о свече
-        redCandle.addToCart(3); // Добавление свечи в корзину
-
-        // Изменение аромата и вывод обновленной информации
-        redCandle.setFlavor("Lavender");
-        System.out.println("Updated red flavor:");
-        redCandle.showInfoAboutCandle();
-
-        // Задание 3. Переработанная программа с выводом информации об объекте свеча
-
-        // Вывод информации о свече
-        String infoAboutCandle = String.format("Candle color: %s, Candle size: %s, Candle flavor: %s, Candle price: %.2f",
-                redCandle.color, redCandle.size, redCandle.getFlavor(), redCandle.price);
-        System.out.println(infoAboutCandle);
-
+        Topping creamCheeseTopping = new Topping("Cream Cheese", 3);
+        Packing newYearPacking = new Packing("Carton", "Green",  false);
+        Cake snickers = new Cake(10.99, "14 february", newYearPacking, creamCheeseTopping);
+        BearToy gammyBear = new BearToy("XL", true, 49.99, "8 march");
+        gammyBear.bearSize();
+        gammyBear.forGirls();
+        Perfume badHoneyPerfume = new Perfume("50ml", "musk", 999, "Father's Day");
+        badHoneyPerfume.getInfo();
+        badHoneyPerfume.setPerfumeFlavor("Vanilla");
+        System.out.printf(badHoneyPerfume.getPerfumeFlavor());
     }
 }
