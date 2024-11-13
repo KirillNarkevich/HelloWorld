@@ -9,8 +9,16 @@ import gifts.cake.Cake;
 import gifts.cake.Packing;
 import gifts.cake.Topping;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
 //        System.out.println("Hello World!");
@@ -326,15 +334,79 @@ public class Main {
 
 //         Домашнее задание от 07.10.2024
 
-        Topping creamCheeseTopping = new Topping("Cream Cheese", 3);
-        Packing newYearPacking = new Packing("Carton", "Green",  false);
-        Cake snickers = new Cake(10.99, "14 february", newYearPacking, creamCheeseTopping);
-        BearToy gammyBear = new BearToy("XL", true, 49.99, "8 march");
-        gammyBear.bearSize();
-        gammyBear.forGirls();
-        Perfume badHoneyPerfume = new Perfume("50ml", "musk", 999, "Father's Day");
-        badHoneyPerfume.getInfo();
-        badHoneyPerfume.setPerfumeFlavor("Vanilla");
-        System.out.printf(badHoneyPerfume.getPerfumeFlavor());
+//        Topping creamCheeseTopping = new Topping("Cream Cheese", 3);
+//        Packing newYearPacking = new Packing("Carton", "Green",  false);
+//        Cake snickers = new Cake(10.99, "14 february", newYearPacking, creamCheeseTopping);
+//        BearToy gammyBear = new BearToy("XL", true, 49.99, "8 march");
+//        gammyBear.bearSize();
+//        gammyBear.forGirls();
+//        Perfume badHoneyPerfume = new Perfume("50ml", "musk", 999, "Father's Day");
+//        badHoneyPerfume.getInfo();
+//        badHoneyPerfume.setPerfumeFlavor("Vanilla");
+//        System.out.printf(badHoneyPerfume.getPerfumeFlavor());
+
+
+        //         Домашнее задание от 09.10.2024
+            // Чтение созданного файла
+        try {
+            File file = new File("newFile2.txt");
+            Scanner scanner2 = new Scanner(file);
+            ArrayList<String> fileContext = new ArrayList<>();
+            while (scanner2.hasNext()){
+                fileContext.add(scanner2.nextLine());
+            }
+            fileContext.forEach(System.out::println);
+        } catch (FileNotFoundException e) {
+            System.out.println("\nSorry, file not found");
+        }
+
+        // Пользовательский ввод
+        System.out.println("\nВведите цену торта: ");
+        double inputPrice = scanner.nextDouble();
+        scanner.nextLine();
+
+        System.out.println("\nВведите тему подарка: ");
+        String giftTopic = scanner.nextLine();
+
+
+        System.out.println("\nВведите упаковочный материал: ");
+        String packingMaterial = scanner.nextLine();
+
+        System.out.println("\nВведите цвет упакочного материала: ");
+        String packingColor = scanner.nextLine();
+
+        System.out.println("\nИмеет упаковка премиум дизайн (true or false): ");
+        boolean premiumDesign = scanner.nextBoolean();
+        scanner.nextLine();
+
+        System.out.println("\nВведите название топпинга:");
+        String toppingName = scanner.nextLine();
+
+        System.out.println("\nВведите количество слоев топпинга:");
+        int numberOfLayers = scanner.nextInt();
+
+        Topping userTopping = new Topping(toppingName, numberOfLayers);
+        Packing userPacking = new Packing(packingMaterial, packingColor, premiumDesign);
+        Cake userCake = new Cake(inputPrice, giftTopic, userPacking, userTopping);
+
+        // Сохранение торта в файл
+        try {
+            FileWriter anotherFile = new FileWriter("newFile2.txt",
+                    false);
+            anotherFile.write("Цена: " + inputPrice);
+            anotherFile.write("Тема подарка: " + giftTopic);
+            anotherFile.write("Упаковочный материал: " + packingMaterial);
+            anotherFile.write("Цвет упаковочного материала: " + packingColor);
+            anotherFile.write("Премиум дизайн: " + premiumDesign);
+            anotherFile.write("Название топпинга: " + toppingName);
+            anotherFile.write("Кол-во слоев топпинга: " + numberOfLayers);
+            anotherFile.write("\n=====================");
+            System.out.println("\nВаш торт сохранен в файл newFile.txt!");
+            anotherFile.close();
+        } catch (IOException e) {
+            System.out.println("Sorry, cannot write to file. File error massage: " + e.getMessage());
+        }
+
+
     }
 }
